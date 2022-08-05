@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inconsolata:wght@600&family=Inter:wght@100;200;300;500;700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./sass/style_location.css">
+  <title>Ubicacion</title>
+</head>
+<body>
+  <div class="main-container">
+    <h1 class="header--text">Parroquia San Judas Tadeo</h1>
+    <div class="location-1" id="map"></div>
+    <h1 class="hour">Hora</h1>
+    <h3 class="hour--info">5:30pm</h3>
+    <div class="ubication">
+      <a href="https://www.google.com.mx/maps/place/Parroquia+de+San+Judas+Tadeo/@31.7362964,-106.4143416,17z/data=!3m1!4b1!4m5!3m4!1s0x86e75b8bc4331a91:0x2e18ba07c3dcdab7!8m2!3d31.7362899!4d-106.4121147" class="btn-location">Ubicacion</a>
+    </div>
+    <h1 class="header--text" id="header2">Salon de Recepciones Maria Bonita<p>(San Lorenzo)</p></h1>
+    
+      <div class="location-1" id="map2"></div>
+      <div class="time" id="time2">
+        <h1 class="hour">Hora</h1>
+        <h3 class="hour--info">9:00pm - 2:00am</h3>
+      </div>
+      <div class="ubication" id="ubication2">
+        <a href="https://www.google.com.mx/maps/place/Suites+Hotel+Mar%C3%ADa+Bonita/@31.750316,-106.4266842,18.93z/data=!4m8!3m7!1s0x86e7591834c34a01:0xc450cd1e91046a1b!5m2!4m1!1i2!8m2!3d31.750383!4d-106.4268297" class="btn-location">Ubicacion</a>
+      </div>
+      <div class="fill"></div>
+      <div class="navigation">
+        <li class="list">
+          <a href="./index.html">
+            <span class="icon">
+              <img src="./sources/icons/home.svg" alt="" class="img active">
+              <span class="nav--info">Inicio</span>
+            </span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="./index2.html">
+            <span class="icon">
+              <img src="./sources/icons/marker.svg" alt="" class="img">
+              <span class="nav--info">Ubicacion</span>
+            </span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="./index4.html">
+            <span class="icon">
+              <img src="./sources/icons/check.svg" alt="" class="img">
+              <span class="nav--info">Asistencia</span>
+            </span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="./index3.html">
+            <span class="icon">
+              <img src="./sources/icons/picture.svg" alt="" class="img">
+              <span class="nav--info">Fotos</span>
+            </span>
+          </a>
+        </li>
+      </div>
+  </div>
+  
+
+  <script src="./js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxynDSNPkm8RgKJnY4ZgzZatgeZt7RHQQ&callback=iniciarMap"></script>
+  <script>
+    const objectS1 = document.querySelector("#header2");
+    const objectS2 = document.querySelector("#map2");
+    const objectS3 = document.querySelector("#time2");
+    const objectS4 = document.querySelector("#ubication2");
+
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: objectS1,
+        start: "center bottom"
+      }
+    });
+
+    let t2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: objectS2,
+        start: "center bottom"
+      }
+    });
+
+    let t3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: objectS3,
+        start: "center bottom"
+      }
+    });
+
+    let t4 = gsap.timeline({
+      scrollTrigger: {
+        trigger: objectS4,
+        start: "bottom bottom"
+      }
+    });
+
+    tl.from(objectS1, {y:150, opacity: 0, duration: 1.5});
+    tl.from(objectS2, {y:100, opacity: 0, duration: 1});
+    tl.from(objectS3, {y:100, opacity: 0, duration: 1});
+    tl.from(objectS4, {y:100, opacity: 0, duration: 0.5});
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inconsolata:wght@600&family=Inter:wght@100;200;300;500;700&family=Kalam:wght@300;400;700&family=Sacramento&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/821f8a03ff.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./sass/style.css">
+  <title>Inicio</title>
+</head>
+<body>
+
+  <div class="main">
+    <div class="bg">
+    </div>
+
+    <div class="body-invite">
+      <h1 class="header--title" id="title">Andy</h1>
+      <h3 class="header--info">My sweet 16</h3>
+      <audio class="player_audio" controls id="audio">
+        <source src="./sources/Sounds/Sugar.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="player_btn player_btn--small" id="play">
+        <i class="fa-solid fa-play"></i>
+        <i class="fa-solid fa-pause hide"></i>
+        <p>Escucha mi cancion!</p>
+      </div>
+      <div class="date">3 de septiembre del 2022</div>
+      <div id="cuenta"></div>
+      <div class="navigation">
+        <li class="list">
+          <a href="./index.html">
+            <span class="icon">
+              <img src="./sources/icons/home.svg" alt="" class="img active">
+              <span class="nav--info">Inicio</span>
+            </span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="./index2.html">
+            <span class="icon">
+              <img src="./sources/icons/marker.svg" alt="" class="img">
+              <span class="nav--info">Ubicacion</span>
+            </span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="./index4.html">
+            <span class="icon">
+              <img src="./sources/icons/check.svg" alt="" class="img">
+              <span class="nav--info">Asistencia</span>
+            </span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="./index3.html">
+            <span class="icon">
+              <img src="./sources/icons/picture.svg" alt="" class="img">
+              <span class="nav--info">Fotos</span>
+            </span>
+          </a>
+        </li>
+      </div>
+    </div>
+  </div>
+
+  <footer class="copy">© Pixie Agency <p>Developed by Pixie</p></footer>
+
+  <audio>
+    <source src="./sources/Sounds/Sugar.mp3">
+  </audio>
+
+  <script src="./js/play.js"></script>
+  <script src="./js/simplyCountdown.min.js"></script>
+  <script src="./js/countdown.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+  <script>
+    const object1 = document.querySelector("#title");
+    const object2 = document.querySelector(".header--info");
+    const object3 = document.querySelector(".date");
+    const object4 = document.querySelector("#cuenta");
+    const object5 = document.querySelector(".navigation");
+    const object6 = document.querySelector("#play");
+
+
+    gsap.from(object1, {opacity: 0, duration: 1, x: -80});
+    gsap.from(object2, {opacity: 0, duration: 1, x: -40, delay: 0.8});
+    gsap.from(object6, {opacity: 0, duration: 1, y: -80, delay:1});
+    gsap.from([object3, object4], {opacity: 0, duration: 1, y: -80, delay:1.5});
+    gsap.from(object5, {opacity: 0, duration: 1, y: 80});
+
+  </script>
+</body>
+</html>
